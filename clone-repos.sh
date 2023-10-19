@@ -3,5 +3,5 @@
 go_repositories=("${(@f)$(./repos.sh)}")
 
 for repo in "${go_repositories[@]}"; do
-  gh repo clone "${repo}" "../${repo#*/}"
+  git clone "https://github.com/${repo}" "../${repo#*/}"
 done
