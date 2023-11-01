@@ -9,6 +9,7 @@
 
 ## Getting started
 
+### Prerequisites
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 1. Install [Go](https://golang.org/doc/install)
 1. Install [Node.js](https://nodejs.org/en/download/)
@@ -21,10 +22,13 @@
    pnpm install -g firebase-tools
    ```
 1. Clone repositories using [clone-repos.sh](clone-repos.sh) script
-1. Install frontend packages by running [pnpm-i.sh](pnpm-i.sh) script
-1. Start Firebase Emulator by running [serve-fb-emulator.sh](serve-fb-emulator.sh) script
-1. Start backend by running [serve-backend.sh](serve-backend.sh) script
-1. Start frontend by running [serve-frontend.sh](serve-frontend.sh) script
+1. Install frontend packages by running `pnpm install` in root of `sneat-apps` repository folder
+
+
+To start frontend & backend locally:
+1. Start Firebase Emulator by running [https://github.com/sneat-co/sneat-go-backend/blob/main/scripts/serve_fb_emulator.sh](serve-fb-emulator.sh) script
+1. Start backend by running [serve-gae.sh](https://github.com/sneat-co/sneat-go-backend/blob/main/scripts/serve_gae.sh) script
+1. Start frontend by running `pnpm run nx serve sneat-app` in root of `sneat-apps` repository folder
 1. Open Sneat.App local dev UI at [http://localhost:4200/](http://localhost:4200/)
 
 ## Scripts
