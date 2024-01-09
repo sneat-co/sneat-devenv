@@ -38,6 +38,12 @@ To start frontend & backend locally:
 - [go-get-all.sh](go-get-all.sh) - runs `go get` for all repositories
 - [go-build-all.sh](go-build-all.sh) - runs `go build` for all repositories
 - [go-test-all.sh](go-test-all.sh) - runs `go test` for all repositories
+- [nginx-self-signed-cert.sh](nginx-self-signed-cert.sh) - create self-signed certificate for serving app over HTTPS
+
+## Serving web app
+
+You can serve web app by running `nx serve sneat-app` from the root folder of [sneat-apps](../sneat-apps).
+
 
 ## Cypress Testing for Sneat-Apps
 
