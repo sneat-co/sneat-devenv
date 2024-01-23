@@ -56,7 +56,7 @@ Before running Cypress tests, ensure you have completed the following prerequisi
 1. Ensure that all prerequisites listed in the "Getting Started" section are properly installed and set up.
 2. Confirm that the Firebase emulators are running. Use the following command to start the emulators if they're not already running:
    ```bash
-   pnpm run cy:emulators
+   pnpm run firebase-emulators:dev
    ```
 3. Make sure the `sneat-go-backend` is running. Follow the instructions in the `sneat-go-backend` project [README](https://github.com/sneat-co/sneat-go-backend/blob/main/README.md) to start the backend.
 
