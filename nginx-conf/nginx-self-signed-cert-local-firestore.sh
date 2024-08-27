@@ -12,8 +12,8 @@ echo "Creating a directory for the SSL key & certificate..."
 mkdir -p "$KEYS_DIR"
 mkdir -p "$CERTS_DIR"
 
-KEY="/etc/ssl/private/local-sneat-ws.key"
-CERT="/etc/ssl/certs/local-sneat-ws.crt"
+KEY="/etc/ssl/private/local-firestore.key"
+CERT="/etc/ssl/certs/local-firestore.crt"
 
 if [ -f "$KEY" ]; then
   echo "Removing existing key files..."
@@ -28,13 +28,13 @@ fi
 echo "Generating an SSL private key & SSL certificate..."
 sudo openssl req \
   -new -x509 -nodes -days 365 -newkey rsa:2048 \
-  -subj "/C=IE/ST=Munster/L=Limerick/O=Sneat.co/CN=local.sneat.ws" \
-  -config openssl-local.sneat.ws.cnf \
+  -subj "/C=IE/ST=Munster/L=Limerick/O=Sneat.co/CN=local-firestore.sneat.ws" \
+  -config openssl-local-firestore.sneat.ws.cnf \
   -keyout $KEY \
   -out $CERT
 
-echo "Creating Diffie-Hellman PEM key..."
-openssl dhparam -out /etc/ssl/certs/dhparam.pem 1024
+#echo "Creating Diffie-Hellman PEM key..."
+#openssl dhparam -out /etc/ssl/certs/dhparam.pem 1024
 
 #chown -R www-data:www-data "$CERTS_DIR"
 echo "chmod -R 755 $CERTS_DIR..."
