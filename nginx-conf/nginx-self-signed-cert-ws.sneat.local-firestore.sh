@@ -12,8 +12,8 @@ echo "Creating a directory for the SSL key & certificate..."
 mkdir -p "$KEYS_DIR"
 mkdir -p "$CERTS_DIR"
 
-KEY="/etc/ssl/private/local-firestore.key"
-CERT="/etc/ssl/certs/local-firestore.crt"
+KEY="/etc/ssl/private/local-firestore.sneat.ws.key"
+CERT="/etc/ssl/certs/local-firestore.sneat.ws.crt"
 
 if [ -f "$KEY" ]; then
   echo "Removing existing key files..."

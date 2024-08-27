@@ -12,8 +12,8 @@ echo "Creating a directory for the SSL key & certificate..."
 mkdir -p "$KEYS_DIR"
 mkdir -p "$CERTS_DIR"
 
-KEY="/etc/ssl/private/local-sneat-ws.key"
-CERT="/etc/ssl/certs/local-sneat-ws.crt"
+KEY="/etc/ssl/private/local.sneat.ws.key"
+CERT="/etc/ssl/certs/local.sneat.ws.crt"
 
 if [ -f "$KEY" ]; then
   echo "Removing existing key files..."
@@ -33,8 +33,8 @@ sudo openssl req \
   -keyout $KEY \
   -out $CERT
 
-echo "Creating Diffie-Hellman PEM key..."
-openssl dhparam -out /etc/ssl/certs/dhparam.pem 1024
+#echo "Creating Diffie-Hellman PEM key..."
+#openssl dhparam -out /etc/ssl/certs/dhparam.pem 1024
 
 #chown -R www-data:www-data "$CERTS_DIR"
 echo "chmod -R 755 $CERTS_DIR..."
@@ -48,4 +48,4 @@ sudo security add-trusted-cert \
   -d -r trustRoot \
   -k /Library/Keychains/System.keychain "$CERT"
 
-# openssl x509 -in /etc/ssl/certs/local-sneat-ws.crt -text -noout
+# openssl x509 -in /etc/ssl/certs/local.sneat.ws.crt -text -noout

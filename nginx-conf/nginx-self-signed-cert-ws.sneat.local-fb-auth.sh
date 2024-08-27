@@ -12,8 +12,8 @@ echo "Creating a directory for the SSL key & certificate..."
 mkdir -p "$KEYS_DIR"
 mkdir -p "$CERTS_DIR"
 
-KEY="/etc/ssl/private/local-fb-auth.key"
-CERT="/etc/ssl/certs/local-fb-auth.crt"
+KEY="/etc/ssl/private/local-fb-auth.sneat.ws.key"
+CERT="/etc/ssl/certs/local-fb-auth.sneat.ws.crt"
 
 if [ -f "$KEY" ]; then
   echo "Removing existing key files..."
