@@ -17,6 +17,10 @@
    ```bash
    npm install pnpm -g
    ```
+1. Create a `pnx` alias for `pnpm run nx`
+   ```bash
+   alias pnx='pnpm run nx'
+   ```
 1. Install [Firebase Emulator](https://firebase.google.com/docs/emulator-suite/install_and_configure)
    ```bash
    pnpm install -g firebase-tools
