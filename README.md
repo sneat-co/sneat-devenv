@@ -25,7 +25,11 @@
    ```bash
    pnpm install -g firebase-tools
    ```
-1. Clone repositories using [clone-repos.sh](clone-repos.sh) script
+1. Clone repositories using [clone-repos.sh](clone-repos.sh) script. At minimum you would need to clone this repositories:
+   - **Frontend**: https://github.com/sneat-co/sneat-apps
+   - **Backend**: https://github.com/sneat-co/sneat-go-server
+   - **Firebase/DB**: https://github.com/sneat-co/sneat-firebase
+
 1. Install frontend packages by running `pnpm install` in root of `sneat-apps` repository folder
 
 
