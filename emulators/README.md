@@ -45,3 +45,19 @@ commit # [27ac52](https://github.com/firebase/firebase-admin-go/commit/27ac52fcc
 
 [Firebase Emulator Admin SDK availability](https://firebase.google.com/docs/emulator-suite/install_and_configure#admin_sdk_availability)
 
+#### Note**: - needs verification
+
+It looks like a bug that Admin SDK is not able to use "demo-*" project ID.
+We have to use a real project ID and provide an environment variable `GOOGLE_APPLICATION_CREDENTIALS`.
+That's wrong and should not be used for scaled development.
+
+#### Google emulators documentation
+
+Read more about connecting an app to:
+
+- [Authentication Emulator](https://firebase.google.com/docs/emulator-suite/connect_auth)
+    - [Admin SKD](https://firebase.google.com/docs/emulator-suite/connect_auth#admin_sdks)
+- [Cloud Firestore Emulator](https://firebase.google.com/docs/emulator-suite/connect_firestore)
+    - [Admin SKD](https://firebase.google.com/docs/emulator-suite/connect_firestore#admin_sdks)
+
+
