@@ -1,9 +1,11 @@
 # Dev environment for [Sneat.app](https://sneat.app)
 
+This repository provides scripts and local NGINX/emulator configuration for developing Sneat.app across the `sneat-apps` frontend, `sneat-go` backend, and `sneat-firebase` project.
+
 ## Our tech stack
 
 - [Go](https://golang.org/) language and [AppEngine](https://cloud.google.com/appengine/) - for backend
-- [Ionic](https://ionicframework.com/) on top of [Angular](https://angular.io/)/[Typecript)(https://www.typescriptlang.org/) - for frontend
+- [Ionic](https://ionicframework.com/) on top of [Angular](https://angular.io/)/[TypeScript](https://www.typescriptlang.org/) - for frontend
 - [Capacitor](https://capacitorjs.com/) - a cross-platform native runtime for web apps
 - [Firebase](https://firebase.google.com/) - for [authentication](https://firebase.google.com/docs/auth)
   - [Firestore](https://firebase.google.com/docs/firestore) - for database & real-time updates
@@ -18,9 +20,9 @@
    ```bash
    npm install pnpm -g
    ```
-1. Create a `pnx` alias for `pnpm run nx`
+1. Create a `pnx` alias for `pnpm nx`
    ```bash
-   alias pnx='pnpm run nx'
+   alias pnx='pnpm nx'
    ```
 1. Install [Firebase Emulator](https://firebase.google.com/docs/emulator-suite/install_and_configure)
    ```bash
@@ -28,18 +30,18 @@
    ```
    We have instructions [how to run Firebase emulators](emulators) for Sneat.app.
    
-1. Clone repositories using [clone-repos.sh](clone-repos.sh) script. At minimum you would need to clone this repositories:
+1. Clone these repositories for the current local stack:
    - **Frontend**: https://github.com/sneat-co/sneat-apps
-   - **Backend**: https://github.com/sneat-co/sneat-go-server
+   - **Backend**: https://github.com/sneat-co/sneat-go (the former `sneat-go-server` code is now in this repository)
    - **Firebase/DB**: https://github.com/sneat-co/sneat-firebase
 
 1. Install frontend packages by running `pnpm install` in root of `sneat-apps` repository folder
 
 
 To start frontend & backend locally:
-1. Start Firebase Emulator by running [https://github.com/sneat-co/sneat-go-backend/blob/main/scripts/serve_fb_emulator.sh](serve-fb-emulator.sh) script
-1. Start backend by running [serve-gae.sh](https://github.com/sneat-co/sneat-go-backend/blob/main/scripts/serve_gae.sh) script
-1. Start frontend by running `pnpm run nx serve sneat-app` in root of `sneat-apps` repository folder
+1. Start Firebase emulators by running [`sneat-go/scripts/serve_fb_emulator.sh`](https://github.com/sneat-co/sneat-go/blob/main/scripts/serve_fb_emulator.sh)
+1. Start the backend by running [`sneat-go/scripts/serve_gae.sh`](https://github.com/sneat-co/sneat-go/blob/main/scripts/serve_gae.sh)
+1. Start the frontend by running `pnpm nx serve sneat-app` in the root of the `sneat-apps` repository
 1. Open Sneat.App local dev UI at [http://localhost:4200/](http://localhost:4200/)
 
 ## Scripts
@@ -60,18 +62,18 @@ To run app locally you'd need to run 3 processes:
 
 ## Unit tests
 
-We sue `vitest` for unit tests.
+We use [Vitest](https://vitest.dev/) for unit tests.
 
-- To run test for specific projext use `nx test <PROJECT_NAME>`, for example: `nx test sneat-app`
-- To run all tests use `nx run-many --target=test --all`
+- To run tests for a specific project use `pnpm nx test <PROJECT_NAME>`, for example: `pnpm nx test sneat-app`
+- To run all tests use `pnpm nx run-many --target=test --all`
 
 ## End-to-end tests
 
-We use PlayWright for end-to-end testing.
+We use Playwright for end-to-end testing.
 
-### Setting Up PlayWright
+### Setting Up Playwright
 
-Before running Cypress tests, wnsure that all prerequisites listed in the "Getting Started" section are properly installed and set up.
+Before running Playwright tests, ensure that all prerequisites listed in the "Getting Started" section are properly installed and set up.
 
 ## How to run end-to-end tests
 
